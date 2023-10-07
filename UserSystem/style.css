@@ -83,9 +83,12 @@ body {
     align-items: center;
     width: 50px;
    height: 50px;
+   margin-bottom: 10px; 
     background-color: #3274d6;
     color: #ffffff;
 }
+
+
 .register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
     width: 310px;
     height: 50px;

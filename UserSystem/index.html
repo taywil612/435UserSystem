@@ -5,11 +5,43 @@
 		<title>Login</title>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
         <link href="style.css" rel="stylesheet" type="text/css">
+		<style>
+			/* Style the tabs for Login and Register */
+			.tab {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0074d9;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Hide the registration form by default */
+        #register-form {
+            display: none;
+		}
+
+		/*Center the Button*/
+		.center-button {
+			text-align: center;
+		}
+
+		/*Align fields */
+		.align-field{
+			display: flex;
+		}
+
+		#register-form input[type="email"]{
+			width: 310px;
+			border: 1px solid #ccc;
+			border-radius: 0px;
+		}
+		</style>
+
 	</head>
 	<body>
 		<div class="login">
 			<h1>Login</h1>
-			<form action="authenticate.php" method="post">
+			<form id="login-form" action="authenticate.php" method="post">
 				<label for="username">
 					<i class="fas fa-user"></i>
 				</label>
@@ -19,7 +51,59 @@
 				</label>
 				<input type="password" name="password" placeholder="Password" id="password" required>
 				<input type="submit" value="Login">
+				<div class="center-button">
+					<p>Don't have an account?</p>
+				    <a class="tab" onclick="showRegisterForm()">Register</a>
+				</div>
+			
+				<!-- Added Registration link to direct to register page -->
 			</form>
+            
+		
+			<!-- Registration form-->
+			<form id="register-form" action="register.php" method="post">
+				<h2>Register New Account</h2>
+				<div class="align-field">
+					<label for="reg_email">
+						<i class="fas fa-envelope"></i>
+					</label>
+					<input type="email" id="reg_email" placeholder="email" required>
+			    </div>
+				<br/>
+
+				<div class="align-field">
+					<label for="reg_username">
+						<i class="fas fa-user"></i>
+					</label>
+					<input type="text" name="reg_username" placeholder="Username" id="reg_username" required>
+			    </div>
+
+				<div class="align-field">
+					<label for="reg_password">
+						<i class="fas fa-lock"></i>
+					</label>
+					<input type="password" name="reg_password" placeholder="Password" id="reg_password" required>
+			    </div>
+
+				<input type="submit" value="Register">
+                <div class="center-button">
+					<p>Already have an account?</p>
+					<a class="tab" onclick="showLoginForm()">Login</a>
+				</div>
+				
+            </form>
 		</div>
+		<script>
+			function showLoginForm() {
+				document.getElementById("login-form").style.display = "block";
+				document.getElementById("register-form").style.display = "none";
+			}
+	
+			function showRegisterForm() {
+				document.getElementById("login-form").style.display = "none";
+				document.getElementById("register-form").style.display = "block";
+			}
+		</script>
+
 	</body>
 </html>
