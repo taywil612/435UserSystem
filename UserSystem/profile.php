@@ -1,4 +1,3 @@
-//for class activity update this file so that users can update their profile information
 
 <?php
 // We need to use sessions, so you should always start sessions using the below code.
