@@ -1,5 +1,10 @@
 <?php
-session_start();
+
+require 'preventBruteForce.php'; // brute force prevention mechanism
+if (session_status() !== PHP_SESSION_ACTIVE) { //done to avoid notice messgae
+    session_start(); 
+}
+
 // Change this to your connection info.
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
