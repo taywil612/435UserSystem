@@ -8,6 +8,7 @@
 body {
     background-color: #435165;
 }
+
 .login {
     width: 400px;
     background-color: #ffffff;
@@ -178,4 +179,51 @@ body.loggedin {
 .content > div p {
 	padding: 5px;
 	margin: 0 0 10px 0;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 2px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #0056b3;
+}
+
+.pagination a.active {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.pagination a.inactive {
+    background-color: #ddd;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Style for "Previous" and "Next" buttons */
+.pagination a:contains('Previous'),
+.pagination a:contains('Next') {
+    padding: 5px 15px;
+    background-color: #007BFF;
+}
+
+.pagination a:contains('Previous'):hover,
+.pagination a:contains('Next'):hover {
+    background-color: #0056b3;
+}
+
+.pagination a:contains('Previous'):active,
+.pagination a:contains('Next'):active {
+    background-color: #004d9f;
 }
