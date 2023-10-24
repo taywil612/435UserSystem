@@ -69,7 +69,16 @@ if ( mysqli_connect_errno() ) {
         //Display table records
         foreach ($articles as $article) {
             echo "<h3>{$article['title']}</h3>";
-            echo "<p>{$article['content']}</p>";
+            // Makes it preview article
+            if (strlen($article['content']) > 100) {
+                echo "<p>" . substr($article['content'], 0, 50) . '... ';
+            }
+            else {
+                echo "<p>{$article['content']} ";
+            }
+            // Add link to static page
+            $fileName = 'news/' . strtolower(str_replace(' ', '_', $article['title'])) .'.html';
+            echo "<a href= ' $fileName '>Read Full Article</a></p>" ;
         }
 
         // Pagination, show page number in link

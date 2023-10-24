@@ -29,9 +29,13 @@ if (!isset($_SESSION['loggedin'])) {
 		<div class="content">
 			<h2>Home</h2>
 			<p>Welcome back, <?=$_SESSION['name']?>!</p>
+
+			<div class="news-list">
+			  <a href="add_news.php"><i class="fas fa-plus"></i> Create News Article</a>
+			</div>
+
 			<div class="news-list">
 			  <a href="news_article.php"><i class="fas fa-user-circle"></i>News List</a>
-			  
 			</div>
 		</div>
 	</body>
